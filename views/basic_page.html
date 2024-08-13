@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link type="text/css" rel="stylesheet" href="/static/basestyle.css">
+  <link type="text/css" rel="stylesheet" href="/static/mdstyle.css">
+  <link type="text/css" rel="stylesheet" href="/static/codestyle.css">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      jax: ["input/TeX", "output/HTML-CSS"],
+      extensions: ["tex2jax.js"],
+      "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] },
+      tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" },
+      TeX: { noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } } },
+      messageStyle: "none"
+    });
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+  </head>
+<body>
+  <div id="root">
+    <div id="navbar">
+      <span class="navbar_span">
+        <a class="navbar_link" , href="/home">/home</a>
+      </span>
+
+      <span class="navbar_span"> | </span>
+
+      <span class="navbar_span">
+        <a class="navbar_link" , href="{{baselink}}">CD: {{baselink}}</a>
+      </span>
+
+      % for link in links:
+
+      <span class="navbar_span"> | </span>
+
+      <span class="navbar_span">
+        <a class="navbar_link" , href="{{baselink}}/{{link}}">./{{link}}</a>
+      </span>
+
+      %end
+
+    </div>
+    <div id="page">
+      <div id="header">
+      </div>
+      <div id="leftbox">
+        {{!content["left"]}}
+      </div>
+      <div id="rightbox">
+        {{!content["right"]}}
+      </div>
+    </div>
+    <section id="footer">
+
+    </section>
+  </div>
+</body>
+</html>
